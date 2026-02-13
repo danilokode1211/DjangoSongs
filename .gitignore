@@ -4,12 +4,16 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
 
-# Variables de entorno
+# Variables de entorno (credenciales DB, SECRET_KEY, etc.)
 .env
-
-# Base de datos local
-db.sqlite3
 
 # VS Code
 .vscode/
+
+# PyCharm (por si acaso)
+.idea/
+
+# Logs
+*.log
