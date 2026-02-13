@@ -24,6 +24,7 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
+#configuracion del acceso a la base de datos
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'django_songs.wsgi.application'
 #configuracion de pymysql tomados de .env
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',  # <-- sigue igual
         'NAME': env('DB_NAME'),
         'USER': env('DB_USER'),
         'PASSWORD': env('DB_PASSWORD'),
@@ -101,6 +102,8 @@ DATABASES = {
         }
     }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
