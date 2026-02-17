@@ -1,0 +1,101 @@
+# INFO.txt
+1. Este proyecto usa Django 4.2
+- manage.py runserver → iniciar servidor de desarrollo
+- manage.py migrate → aplicar migraciones
+- manage.py createsuperuser → crear administrador
+- requirements.txt → dependencias del proyecto
+
+1 . Crear entorno virtual (si no existe):
+   python -m venv .venv (este nombre puede variar)
+
+2. Activar entorno virtual:
+   - Windows:
+     .venv\Scripts\activate
+   - Mac / Linux:
+     source .venv/bin/activate
+
+3. Instalar dependencias:
+   pip install -r requirements.txt
+
+4. Desactivar entorno virtual:
+   deactivate
+
+## Dependencias principales
+- Django==4.2.x
+- djangorestframework==3.20.x
+- psycopg2-binary==2.9.x
+(Otras librerías que uses…)
+
+## Comandos útiles de Django
+- python manage.py runserver
+  → Inicia servidor de desarrollo
+    
+  → Apaga el servidor con: 
+    ctrl+c
+- python manage.py makemigrations
+  → Detecta cambios en los modelos y prepara migraciones
+
+- python manage.py migrate
+  → Aplica migraciones a la base de datos
+
+- python manage.py createsuperuser
+  → Crear superusuario para el admin
+
+- python manage.py shell
+  → Abrir consola interactiva de Django
+
+- pip freeze > requirements.txt
+  → Actualizar lista de dependencias
+
+## Estructura del proyecto y notas generales
+- /app_name
+  → Apps principales
+- /templates
+  → Archivos HTML
+- /static
+  → CSS, JS, imágenes
+- manage.py
+  → Comandos de gestión del proyecto
+
+## Tips y buenas prácticas:
+
+- Siempre activar `.venv` antes de trabajar.
+- Hacer commits frecuentes con mensajes claros.
+- Mantener `requirements.txt` actualizado al agregar librerías.
+- Consultar INFO.txt como guía rápida de comandos.
+
+
+## Instalar dependencias principales
+
+pip install Django PyMySQL django-environ
+
+Django → framework principal
+
+PyMySQL → conector MySQL compatible con Windows (puede ser mongo,sql server,etc)
+
+django-environ → leer variables desde .env
+
+
+## Creacion del proyecto:
+
+    (DENTRO DE LA CARPETA DEL PROYECTO)
+
+    cd C:\..\proyectname\proyect_name
+
+
+    django-admin startproject proyect_name . (por convencion se hace _ el nombre del proyecto)
+    
+    CREACION DE APPS DENTRO DEL PROYECTO:
+
+        python manage.py startapp yourapp
+
+    CREACION DE CARPETAS DENTRO DEL PROYECTO:
+
+        mkdir C:\..\..\..\yourfolder
+
+# NOTAS GENERALES SOBRE EL PROYECTO:
+
+    dentro del proyecto, en installed apps se matricula la app a usar, es el cerebro del proyecto
+
+
+

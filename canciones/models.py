@@ -21,3 +21,6 @@ class Cancion(models.Model):
 
     def __str__(self):
         return f"{self.titulo} - {self.artista}"  
+
+
+#consultar los tipos de formularios que se pueden hacer con django modelform vs formnormal
