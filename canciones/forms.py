@@ -1,7 +1,7 @@
 from django import forms
 from canciones.models import Cancion
 
-class CancionForm(forms.ModelForm):
+class CancionForm(forms.ModelForm):  #esto valida la entrada solito
     class Meta:
 
         model = Cancion #modelo asociado

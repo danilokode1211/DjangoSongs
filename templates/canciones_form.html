@@ -1,41 +1,18 @@
-<!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <title>Agregar Canción</title>
+{% extends 'base.html' %}
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="container py-5">
+{% block title %}{{ accion }}{% endblock %}
 
-    <h1 class="text-success mb-4">🎵 Agregar Canción</h1>
-
-    <form method="POST">
-        {% csrf_token %}
-
-        <div class="mb-3">
-            <label class="form-label">Título</label>
-            {{ form.titulo }}
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Artista</label>
-            {{ form.artista }}
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Popularidad (1-10)</label>
-            {{ form.popularidad }}
-        </div>
-
-        <button type="submit" class="btn btn-success">
-            Guardar
-        </button>
-
-        <a href="{% url 'index' %}" class="btn btn-secondary">
-            Cancelar
-        </a>
-    </form>
-
-</body>
-</html>
+{% block content %}
+  <h2 class="text-center text-success mb-4">{{ accion }}</h2>
+  <form method="post" class="mx-auto" style="max-width: 500px;">
+    {% csrf_token %} <!--Investigar el uso de tokens en bootstrap/html-->
+    {{ form.as_p }} <!--Formulario de  tipo parrafo-->
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-success">
+      {% if accion == 'Editar Cancion' %}Actualizar{% elif accion == 'Agregar Cancion' %}Guardar{% else %}Eliminar{% endif %}
+      </button>
+      <a href="{% url 'index' %}" class="btn btn-secondary">Cancelar</a>
+    </div>
+  </form>
+{% endblock %}
+|

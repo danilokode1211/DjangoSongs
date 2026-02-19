@@ -7,5 +7,19 @@ def obtener_todas():
     return Cancion.objects.all().order_by('id')
 
 def crear_cancion(datos):
-    Cancion.objects.create(**datos) #investigar por que el **
+
+    Cancion.objects.create(**datos) #se hace doble asterisco para desempaquetar informacion
+
+def editar_cancion(id,datos):
+    cancion = Cancion.objects.get(pk=id) #obj ya existente y precargado
+    for campo, valor in datos.items(): 
+        setattr(cancion,campo,valor) #settear atributo
+    cancion.save()
+
+    return cancion
+
+def eliminar_cancion(id):
+    cancion = Cancion.objects.get(pk=id)
+    cancion.delete()
+        
 

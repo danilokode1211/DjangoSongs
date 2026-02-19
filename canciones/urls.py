@@ -5,6 +5,8 @@ from . import views
 urlpatterns = [
                     #referencia al index. html buscado en templates
     path('', views.index, name='index'),
-    path('agregar/', views.crear_cancion, name='crear_cancion')
+    path('agregar/', views.crear_cancion, name='crear_cancion'),
+    path('editar/<int:id>/', views.editar_cancion, name='editar_cancion'),
+    path('eliminar/<int:id>/', views.eliminar_cancion, name='eliminar_cancion')
     
 ]
